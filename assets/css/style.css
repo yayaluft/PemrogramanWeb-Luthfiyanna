@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
 }
-
+ 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     color: #2b2b2b;
@@ -13,7 +13,7 @@ body {
 }
 
 a {
-    color: #1d5b8a;
+    color: #4a1e2f;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 
 /* ===== Header & Navbar (Flexbox) ===== */
 header {
-    background-color: #1d5b8a;
+    background-color: #4a1e2f;
     color: #fff;
     padding: 1rem 1.5rem;
     display: flex;
@@ -64,13 +64,13 @@ section {
 
 section h2 {
     margin-bottom: 1rem;
-    color: #1d5b8a;
+    color: #4a1e2f;
 }
 
 /* ===== Kartu Statistik (CSS Grid) ===== */
 main section:nth-of-type(2) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
 
@@ -79,7 +79,7 @@ main section:nth-of-type(2) h2{
 }
 
 main section:nth-of-type(2) article {
-    background-color: #eef4fa;
+    background-color: #f7eef2;
     border-radius: 8px;
     padding: 1.25rem;
     text-align: center;
@@ -87,14 +87,14 @@ main section:nth-of-type(2) article {
 
 main section:nth-of-type(2) article h3 {
     font-size: 0.95rem;
-    color: #55677a;
+    color: #6e5560;
     margin-bottom: 0.5rem;
 }
 
 main section:nth-of-type(2) article p {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1d5b8a;
+    color: #4a1e2f;
 }
 
 /* ===== Tabel ===== */
@@ -110,16 +110,16 @@ th, td {
 }
 
 thead {
-    background-color: #1d5b8a;
+    background-color: #4a1e2f;
     color: #fff;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f7f9fb;
+    background-color: #faf7f8;
 }
 
 tbody tr:hover {
-    background-color: #eef4fa;
+    background-color: #f3e9ed;
 }
 
 td button {
@@ -129,16 +129,19 @@ td button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.85rem;
+    color: #fff;
 }
 
-td button:first-of-type {
+td button.btn-edit {
     background-color: #f0ad4e;
-    color: #fff;
 }
 
-td button:last-of-type {
+td button.btn-detail {
+    background-color: #17a2b8;
+}
+
+td button.btn-hapus {
     background-color: #d9534f;
-    color: #fff;
 }
 
 /* ===== Form ===== */
@@ -164,7 +167,7 @@ form select {
 }
 
 form button[type="submit"] {
-    background-color: #1d5b8a;
+    background-color: #4a1e2f;
     color: #fff;
     border: none;
     padding: 0.6rem 1.5rem;
@@ -174,7 +177,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-    background-color: #164869;
+    background-color: #331420;
 }
 
 /* ===== Footer ===== */
