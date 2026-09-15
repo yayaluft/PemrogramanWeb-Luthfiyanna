@@ -1,0 +1,15 @@
+/* Override Bootstrap dengan tema warna Maroon SIMPUS-Mini */
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #f7eef2 !important;
+}
+
+form button[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #331420 !important;
+}
