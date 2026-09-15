@@ -1,0 +1,36 @@
+/* Override Bootstrap dengan tema warna Maroon SIMPUS-Mini */
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #f7eef2 !important;
+}
+
+form button[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #331420 !important;
+}
+
+/* Animasi transisi menu navigasi */
+header nav.collapse,
+header nav {
+    transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+/* Pesan Error Validasi JS */
+.error {
+    display: block;
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+/* Styling Counter Baris Tabel */
+#table-counter {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
