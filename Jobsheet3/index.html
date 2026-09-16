@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCam | Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>RentCam</h1>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="alat/list.html">Daftar Alat</a></li>
+                <li><a href="alat/tambah.html">Tambah Alat</a></li>
+                <li><a href="penyewa/list.html">Daftar Penyewa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <h2>Selamat Datang di RentCam Panel</h2>
+            <p>Kelola inventaris sewa kamera, aksesoris lensa, serta pemantauan transaksi rental aktif.</p>
+            <div class="quick-links">
+                <a href="alat/tambah.html">+ Tambah Alat</a>
+                <a href="penyewa/tambah.html" class="btn-outline">+ Tambah Penyewa</a>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="stats-container">
+                <article class="metric-card">
+                    <h3>Total Kamera</h3>
+                    <p>12</p>
+                </article>
+
+                <article class="metric-card">
+                    <h3>Total Aksesoris</h3>
+                    <p>8</p>
+                </article>
+
+                <article class="metric-card">
+                    <h3>Sedang Disewa</h3>
+                    <p>5</p>
+                </article>
+
+                <article class="metric-card">
+                    <h3>Unit Tersedia</h3>
+                    <p>15</p>
+                </article>
+            </div>
+
+            <article class="activity-card">
+                <h3>Unit Sedang Dirental</h3>
+                <ul class="activity-list">
+                    <li>
+                        <span>Sony Alpha a7 IV</span>
+                        <span class="status-tag">Nadia A. (2 Hari)</span>
+                    </li>
+                    <li>
+                        <span>Lensa FE 24-70mm GM</span>
+                        <span class="status-tag">Nabila A. (1 Hari)</span>
+                    </li>
+                    <li>
+                        <span>Fujifilm X-T5 Body</span>
+                        <span class="status-tag">Rizky P. (3 Hari)</span>
+                    </li>
+                    <li>
+                        <span>DJI Ronin-SC Gimbal</span>
+                        <span class="status-tag">Fajar R. (1 Hari)</span>
+                    </li>
+                </ul>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RentCam &mdash; Jobsheet 3 Pemrograman Web</p>
+    </footer>
+</body>
+</html>
