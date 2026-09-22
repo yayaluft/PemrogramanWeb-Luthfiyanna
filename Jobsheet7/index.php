@@ -2,7 +2,6 @@
 $page_title = "Beranda";
 include __DIR__ . '/includes/header.php';
 
-// Inisialisasi awal ke $_SESSION jika data alat belum ada
 if (!isset($_SESSION['alat'])) {
     $_SESSION['alat'] = [
         ["kode" => "CAM-01", "nama" => "Sony Alpha a7 IV Body", "kategori" => "Kamera", "tarif" => 350000, "status" => "Disewa"],
@@ -22,7 +21,7 @@ $tersedia = $total_alat - $disewa;
 
 <section class="hero-banner">
     <h2>Selamat Datang di Panel RentCam</h2>
-    <p>Kelola inventaris sewa kamera dan transaksi penyewa berbasis PHP Dasar.</p>
+    <p>Kelola inventaris sewa kamera dan transaksi penyewa.</p>
     <div class="quick-links">
         <a href="alat/tambah.php">+ Tambah Alat</a>
         <a href="penyewa/tambah.php">+ Tambah Penyewa</a>
