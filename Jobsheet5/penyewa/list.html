@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCam | Data Penyewa</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>RentCam</h1>
+        <button type="button" id="nav-toggle-btn" class="nav-btn-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="../alat/list.html">Daftar Alat</a></li>
+                <li><a href="../alat/tambah.html">Tambah Alat</a></li>
+                <li><a href="list.html" class="active">Daftar Penyewa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Daftar Penyewa</h2>
+
+            <div class="table-toolbar">
+                <a href="tambah.html" class="btn-add">+ Tambah Penyewa</a>
+                <div class="filter-group">
+                    <input type="text" id="search-input" placeholder="Ketik untuk mencari penyewa...">
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Penyewa</th>
+                            <th>Nama Lengkap</th>
+                            <th>No. WhatsApp / HP</th>
+                            <th>Status Transaksi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CUST-001</td>
+                            <td>Bagas Pratama</td>
+                            <td>081234567890</td>
+                            <td><span class="badge-status badge-disewa">Aktif Menyewa</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-hapus">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CUST-002</td>
+                            <td>Nabila Azzahra</td>
+                            <td>085712345678</td>
+                            <td><span class="badge-status badge-disewa">Aktif Menyewa</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-hapus">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CUST-003</td>
+                            <td>Rizky Pratama</td>
+                            <td>087890123456</td>
+                            <td><span class="badge-status badge-tersedia">Selesai</span></td>
+                            <td>
+                                <button class="btn-edit">Edit</button>
+                                <button class="btn-hapus">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RentCam &mdash; Jobsheet 5 Pemrograman Web</p>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
