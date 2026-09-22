@@ -1,76 +1,115 @@
-document.addEventListener("DOMContentLoaded", function () {
-    initNavToggle();
-    initHapusConfirm();
-    initTableFilter();
-    initValidasiForm();
-});
-
-// 1. Hamburger menu (Mendukung Bootstrap Collapse lewat JS)
+// ===== Hamburger menu (JS-driven, menggantikan checkbox hack) =====
 function initNavToggle() {
     const toggleBtn = document.getElementById("nav-toggle-btn");
-    const navMenu = document.getElementById("navMenu");
-
-    if (!toggleBtn || !navMenu) return;
-
-    const bsCollapse = new bootstrap.Collapse(navMenu, {
-        toggle: false
-    });
+    const nav = document.querySelector("header nav");
+    if (!toggleBtn || !nav) return;
 
     toggleBtn.addEventListener("click", function () {
-        bsCollapse.toggle();
+        nav.classList.toggle("nav-open");
     });
 }
 
-// 2. Konfirmasi hapus dengan Event Delegation (Wajib untuk data dinamis Fetch)
+// ===== Konfirmasi hapus (front-end only, belum ke server) =====
+function initHapusConfirm() {
+    document.querySelectorAll(".btn-hapus").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const row = btn.closest("tr");
+            // Ambil kolom ke-2 (Nama Perangkat / Nama Penyewa)
+            const nama = row ? row.querySelector("td:nth-child(2)")?.textContent.trim() : "data ini";
+            const yakin = confirm("Yakin ingin menghapus \"" + nama + "\"?");
+            if (yakin && row) {
+                row.remove();
+            }
+        });
+    });
+}
+
+// ===== Filter/pencarian tabel real-time =====
+function initTableFilter() {
+    const input = document.getElementById("search-input");
+    const table = document.querySelector(".table-responsive table");
+    if (!input || !table) return;
+
+    input.addEventListener("keyup", function () {
+        const keyword = input.value.toLowerCase();
+        const rows = table.querySelectorAll("tbody tr");
+        rows.forEach(function (row) {
+            const teks = row.textContent.toLowerCase();
+            row.style.display = teks.includes(keyword) ? "" : "none";
+        });
+    });
+}
+
+// ===== Validasi form (client-side) =====
+function tampilkanError(input, pesan) {
+    hapusError(input);
+    const span = document.createElement("span");
+    span.className = "error";
+    span.textContent = pesan;
+    input.insertAdjacentElement("afterend", span);
+}
+
+function hapusError(input) {
+    const next = input.nextElementSibling;
+    if (next && next.classList.contains("error")) {
+        next.remove();
+    }
+}
+
+// ===== Hamburger menu (JS-driven, menggantikan checkbox hack) =====
+function initNavToggle() {
+    const toggleBtn = document.getElementById("nav-toggle-btn");
+    const nav = document.querySelector("header nav");
+    if (!toggleBtn || !nav) return;
+
+    toggleBtn.addEventListener("click", function () {
+        nav.classList.toggle("nav-open");
+    });
+}
+
+// ===== Konfirmasi hapus (Event Delegation untuk Elemen Dinamis) =====
 function initHapusConfirm() {
     document.addEventListener("click", function (e) {
+        // Cek apakah elemen yang diklik atau induknya adalah .btn-hapus
         const btn = e.target.closest(".btn-hapus");
         if (!btn) return;
 
         const row = btn.closest("tr");
-        if (!row) return;
+        const nama = row ? row.querySelector("td:nth-child(2)")?.textContent.trim() : "data ini";
 
-        const itemText = row.cells[0]?.textContent.trim() || "data ini";
-        const yakin = confirm(`Yakin ingin menghapus "${itemText}"?`);
-
-        if (yakin) {
+        const yakin = confirm("Yakin ingin menghapus \"" + nama + "\"?");
+        if (yakin && row) {
             row.remove();
         }
     });
 }
 
-// 3. Filter/pencarian tabel real-time
+// ===== Filter/pencarian tabel real-time =====
 function initTableFilter() {
     const input = document.getElementById("search-input");
     const table = document.querySelector(".table-responsive table");
-
     if (!input || !table) return;
 
     input.addEventListener("keyup", function () {
-        const keyword = input.value.toLowerCase().trim();
+        const keyword = input.value.toLowerCase();
         const rows = table.querySelectorAll("tbody tr");
-
         rows.forEach(function (row) {
-            const rowText = row.textContent.toLowerCase();
-            row.style.display = rowText.includes(keyword) ? "" : "none";
+            const teks = row.textContent.toLowerCase();
+            row.style.display = teks.includes(keyword) ? "" : "none";
         });
     });
 }
 
-// 4. Validasi form inline (Sisi Klien)
+// ===== Validasi form (client-side) =====
 function tampilkanError(input, pesan) {
     hapusError(input);
-    input.classList.add("is-invalid");
-
     const span = document.createElement("span");
-    span.className = "error text-danger d-block mt-1 small";
+    span.className = "error";
     span.textContent = pesan;
-
     input.insertAdjacentElement("afterend", span);
 }
 
 function hapusError(input) {
-    input.classList.remove("is-invalid");
     const next = input.nextElementSibling;
     if (next && next.classList.contains("error")) {
         next.remove();
@@ -78,54 +117,52 @@ function hapusError(input) {
 }
 
 function initValidasiForm() {
-    const form = document.querySelector("form");
+    const form = document.getElementById("form-tambah");
     if (!form) return;
-
-    form.setAttribute("novalidate", "true");
 
     form.addEventListener("submit", function (e) {
         let valid = true;
 
-        const namaField = form.querySelector("[name='judul'], [name='nama']");
-        if (namaField && namaField.value.trim() === "") {
-            tampilkanError(namaField, "Field ini wajib diisi.");
+        const kode = form.querySelector("[name='kode'], [name='id_penyewa']");
+        if (kode && kode.value.trim() === "") {
+            tampilkanError(kode, "Field kode/ID wajib diisi.");
             valid = false;
-        } else if (namaField) {
-            hapusError(namaField);
+        } else if (kode) {
+            hapusError(kode);
         }
 
-        const secondaryField = form.querySelector("[name='pengarang'], [name='no_anggota']");
-        if (secondaryField && secondaryField.value.trim() === "") {
-            tampilkanError(secondaryField, "Field ini wajib diisi.");
+        const nama = form.querySelector("[name='nama']");
+        if (nama && nama.value.trim() === "") {
+            tampilkanError(nama, "Nama wajib diisi.");
             valid = false;
-        } else if (secondaryField) {
-            hapusError(secondaryField);
+        } else if (nama) {
+            hapusError(nama);
         }
 
-        const tahun = form.querySelector("[name='tahun']");
-        if (tahun) {
-            const nilai = parseInt(tahun.value, 10);
-            if (isNaN(nilai) || nilai < 1900 || nilai > 2026) {
-                tampilkanError(tahun, "Tahun harus di antara 1900-2026.");
+        const tarif = form.querySelector("[name='tarif']");
+        if (tarif) {
+            const nilai = parseInt(tarif.value, 10);
+            if (isNaN(nilai) || nilai <= 0) {
+                tampilkanError(tarif, "Tarif sewa harus lebih dari Rp 0.");
                 valid = false;
             } else {
-                hapusError(tahun);
+                hapusError(tarif);
             }
         }
 
-        const stok = form.querySelector("[name='stok']");
-        if (stok) {
-            const nilai = parseInt(stok.value, 10);
-            if (stok.value.trim() === "" || isNaN(nilai) || nilai < 0) {
-                tampilkanError(stok, "Stok tidak boleh negatif atau kosong.");
-                valid = false;
-            } else {
-                hapusError(stok);
-            }
-        }
-
-        if (!valid) {
-            e.preventDefault();
+        const telepon = form.querySelector("[name='telepon']");
+        if (telepon && telepon.value.trim() === "") {
+            tampilkanError(telepon, "Nomor HP wajib diisi.");
+            valid = false;
+        } else if (telepon) {
+            hapusError(telepon);
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    initNavToggle();
+    initHapusConfirm();
+    initTableFilter();
+    initValidasiForm();
+});
