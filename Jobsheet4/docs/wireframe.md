@@ -1,21 +1,21 @@
-# Wireframe & User Flow — SIMPUS-Mini
+# Wireframe & User Flow — RentCam
 ## Aktor
-1. Tamu: hanya bisa melihat katalog buku (Beranda, Daftar Buku) tanpa login.
-2. Petugas: login untuk mengakses seluruh fitur CRUD dan transaksi peminjaman.
+1. Tamu: hanya bisa melihat katalog alat (Beranda, Daftar Alat) tanpa login.
+2. Petugas: login untuk mengakses seluruh fitur CRUD dan transaksi penyewaan.
 
-## User Flow — Peminjaman Buku
+## User Flow — Penyewaan Alat
 
 ```text
-[Petugas login] -> [Dashboard] -> [Pilih menu "Peminjaman Baru"]
-        -> [Pilih Anggota] -> [Pilih Buku (stok > 0)]
-        -> [Simpan] -> [Stok buku berkurang 1] -> [Kembali ke Dashboard]
+[Petugas login] -> [Dashboard] -> [Pilih menu "Sewa Baru"]
+        -> [Pilih Pelanggan] -> [Pilih Alat (stok > 0)]
+        -> [Simpan] -> [Stok alat berkurang 1] -> [Kembali ke Dashboard]
 ```
 
-## User Flow — Pengembalian Buku
+## User Flow — Pengembalian Alat
 
 ```text
-[Dashboard] -> [Menu "Pengembalian"] -> [Cari transaksi aktif (anggota/buku)]
-        -> [Tandai "Dikembalikan"] -> [Stok buku bertambah 1]
+[Dashboard] -> [Menu "Pengembalian"] -> [Cari transaksi aktif (pelanggan/alat)]
+        -> [Tandai "Dikembalikan"] -> [Stok alat bertambah 1]
         -> [Kembali ke Dashboard]
 ```
 
@@ -23,7 +23,7 @@
 
 ```text
 +--------------------------------------+
-|              SIMPUS-Mini             |
+|               RentCam                |
 |--------------------------------------|
 |                                      |
 |          [ Login Petugas ]           |
@@ -33,7 +33,7 @@
 |                                      |
 |          [   Masuk   ]               |
 |                                      |
-|   Belum punya akun? Daftar di sini   |
+|   Belum punya akun? Hubungi Admin    |
 +--------------------------------------+
 ```
 
@@ -41,16 +41,16 @@
 
 ```text
 +-----------------------------------------------------------------------+
-| SIMPUS-Mini   Beranda | Buku | Anggota | Peminjaman   (Nama Petugas)  |X| |
+| RentCam   Beranda | Alat | Pelanggan | Rental         (Nama Petugas)  |X| |
 |-----------------------------------------------------------------------|
-|  [Total Buku]          [Total Anggota]          [Sedang Dipinjam]     |
+|  [Total Alat]          [Total Pelanggan]       [Sedang Disewa]        |
 |                                                                       |
 |  Aksi Cepat:                                                          |
-|  [ + Peminjaman Baru ]   [ + Pengembalian ]                           |
+|  [ + Sewa Baru ]         [ + Pengembalian ]                           |
 |                                                                       |
 |  Transaksi Terbaru                                                    |
 |  -------------------------------------------------------------------  |
-|  Anggota            | Buku             | Tgl Pinjam   | Status        |
+|  Pelanggan          | Alat             | Tgl Sewa     | Status        |
 +-----------------------------------------------------------------------+
 ```
 
@@ -58,13 +58,13 @@
 
 ```text
 +--------------------------------------+
-|  Form Peminjaman Buku                |
+|  Form Penyewaan Alat                 |
 |--------------------------------------|
-|  Anggota : [ dropdown pilih anggota ]|
-|  Buku    : [ dropdown, hanya stok>0 ]|
-|  Tanggal Pinjam : [ auto: hari ini ] |
+|  Pelanggan : [ dropdown pilih nama ] |
+|  Alat      : [ dropdown, hanya stok>0]|
+|  Tanggal Sewa : [ auto: hari ini ]   |
 |                                      |
-|          [  Simpan Peminjaman  ]     |
+|          [    Simpan Sewa    ]       |
 +--------------------------------------+
 ```
 
@@ -72,14 +72,14 @@
 
 ```text
 +-------------------------------------------------+
-|  Pengembalian Buku                              |
+|  Pengembalian Alat                              |
 |-------------------------------------------------|
 |  Cari transaksi aktif:                          |
-|  [ nama anggota / judul buku _________________ ]|
+|  [ nama pelanggan / nama alat ________________ ]|
 |                                                 |
-|  Anggota    | Buku      | Tgl Pinjam | Aksi     |
+|  Pelanggan  | Alat      | Tgl Sewa   | Aksi     |
 |  -----------+-----------+------------+----------|
-|  Siti A.    | Pelangi   | 01/07      | [Kembali]|
+|  Bagas P.   | Sony A7   | 01/09      | [Kembali]|
 +-------------------------------------------------+
 ```
 
@@ -87,11 +87,11 @@
 
 ```text
 +-----------------------------------------------------+
-|  Riwayat Peminjaman — Siti Aminah                   |
+|  Riwayat Rental — Bagas Pratama                     |
 |-----------------------------------------------------|
-|  Buku               | Pinjam   | Kembali  | Status  |
+|  Alat               | Sewa     | Kembali  | Status  |
 |  -------------------+----------+----------+---------|
-|  Laskar Pelangi     | 01/07    | 10/07    | Selesai |
-|  Bumi Manusia       | 15/07    | -        | Dipinjam|
+|  Sony Alpha a7 IV   | 01/09    | 10/09    | Selesai |
+|  DJI Ronin-SC       | 15/09    | -        | Disewa  |
 +-----------------------------------------------------+
 ```
