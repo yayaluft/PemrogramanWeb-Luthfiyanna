@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCam | Login Petugas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .login-wrapper {
+            max-width: 400px;
+            margin: 4rem auto;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #4a1e2f;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .login-header h2 {
+            color: #4a1e2f;
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .login-header p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .login-wrapper form input[type="text"],
+        .login-wrapper form input[type="password"] {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .login-wrapper form button[type="submit"] {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+        }
+
+        .login-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>RentCam</h1>
+        <button type="button" id="nav-toggle-btn" class="nav-btn-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="../alat/list.html">Daftar Alat</a></li>
+                <li><a href="../penyewa/list.html">Daftar Penyewa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-wrapper">
+            <div class="login-header">
+                <h2>RentCam</h2>
+                <p>Portal Masuk Petugas</p>
+            </div>
+
+            <form id="form-login" action="../index.html" method="GET" novalidate>
+                <p>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Masukkan username petugas">
+                </p>
+
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Masukkan password">
+                </p>
+
+                <div class="form-actions">
+                    <button type="submit">Masuk Panel</button>
+                </div>
+
+                <div class="login-footer">
+                    <p>Belum punya akun? Hubungi Admin</p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RentCam &mdash; Jobsheet 5 Pemrograman Web</p>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script>
+        const formLogin = document.getElementById("form-login");
+        if (formLogin) {
+            formLogin.addEventListener("submit", function (e) {
+                let valid = true;
+
+                const username = formLogin.querySelector("#username");
+                const password = formLogin.querySelector("#password");
+                formLogin.querySelectorAll(".error").forEach((el) => el.remove());
+
+                const tampilkanErrorLogin = (input, pesan) => {
+                    valid = false;
+                    input.classList.add("input-error");
+                    const span = document.createElement("span");
+                    span.className = "error";
+                    span.textContent = pesan;
+                    input.insertAdjacentElement("afterend", span);
+                };
+
+                if (!username.value.trim()) {
+                    tampilkanErrorLogin(username, "Username wajib diisi.");
+                } else {
+                    username.classList.remove("input-error");
+                }
+
+                if (!password.value.trim()) {
+                    tampilkanErrorLogin(password, "Password wajib diisi.");
+                } else {
+                    password.classList.remove("input-error");
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
