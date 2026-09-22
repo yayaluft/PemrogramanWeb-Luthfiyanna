@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentCam | Tambah Alat</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>RentCam</h1>
+        <button type="button" id="nav-toggle-btn" class="nav-btn-toggle" aria-label="Toggle Menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html">Daftar Alat</a></li>
+                <li><a href="tambah.html" class="active">Tambah Alat</a></li>
+                <li><a href="../penyewa/list.html">Daftar Penyewa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tambah Unit Alat</h2>
+            <!-- novalidate agar browser membiarkan validasi dikontrol penuh oleh JavaScript -->
+            <form action="list.html" method="GET" novalidate>
+                <div class="form-row">
+                    <div>
+                        <label for="kode">Kode Alat</label>
+                        <input type="text" id="kode" name="kode" placeholder="Contoh: CAM-03" required>
+                    </div>
+                    <div>
+                        <label for="kategori">Kategori</label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="">-- Pilih Kategori --</option>
+                            <option value="kamera">Kamera</option>
+                            <option value="aksesoris">Aksesoris</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="nama">Nama Perangkat</label>
+                        <input type="text" id="nama" name="nama" placeholder="Contoh: Sony FX3 Cinema Line" required>
+                    </div>
+                    <div>
+                        <label for="tarif">Tarif / Hari (Rp)</label>
+                        <input type="number" id="tarif" name="tarif" placeholder="Contoh: 500000" required>
+                    </div>
+                </div>
+
+                <p>
+                    <label for="kelengkapan">Kelengkapan Unit</label>
+                    <textarea id="kelengkapan" name="kelengkapan" rows="3"
+                        placeholder="Contoh: 2x Baterai, Charger, Box, Strap"></textarea>
+                </p>
+
+                <div style="margin-bottom: 1rem;">
+                    <label>Status Unit</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="status" value="tersedia" checked> Tersedia</label>
+                        <label><input type="radio" name="status" value="disewa"> Disewa</label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Simpan</button>
+                    <button type="reset" class="btn-reset">Batal</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RentCam &mdash; Jobsheet 5 Pemrograman Web</p>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+</body>
+
+</html>
