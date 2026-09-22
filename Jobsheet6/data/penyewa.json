@@ -1,0 +1,26 @@
+[
+    {
+        "id": "CUST-001",
+        "nama": "Bagas Pratama",
+        "telepon": "081234567890",
+        "status": "Aktif Menyewa"
+    },
+    {
+        "id": "CUST-002",
+        "nama": "Nabila Azzahra",
+        "telepon": "085712345678",
+        "status": "Aktif Menyewa"
+    },
+    {
+        "id": "CUST-003",
+        "nama": "Rizky Pratama",
+        "telepon": "087890123456",
+        "status": "Selesai"
+    },
+    {
+        "id": "CUST-004",
+        "nama": "Fajar Ramadhan",
+        "telepon": "089612345678",
+        "status": "Aktif Menyewa"
+    }
+]

@@ -1,0 +1,72 @@
+[
+    {
+        "kode": "CAM-01",
+        "nama": "Sony Alpha a7 IV Body",
+        "kategori": "Kamera",
+        "tarif": 350000,
+        "status": "Disewa"
+    },
+    {
+        "kode": "ACC-01",
+        "nama": "Lensa Sony FE 24-70mm f/2.8 GM",
+        "kategori": "Aksesoris",
+        "tarif": 180000,
+        "status": "Disewa"
+    },
+    {
+        "kode": "CAM-02",
+        "nama": "Fujifilm X-T5 Body",
+        "kategori": "Kamera",
+        "tarif": 275000,
+        "status": "Tersedia"
+    },
+    {
+        "kode": "ACC-02",
+        "nama": "Gimbal Stabilizer DJI Ronin-SC",
+        "kategori": "Aksesoris",
+        "tarif": 120000,
+        "status": "Tersedia"
+    },
+    {
+        "kode": "CAM-03",
+        "nama": "Canon EOS R6 Mark II",
+        "kategori": "Kamera",
+        "tarif": 380000,
+        "status": "Tersedia"
+    },
+    {
+        "kode": "ACC-03",
+        "nama": "Lensa Canon RF 50mm f/1.2 L",
+        "kategori": "Aksesoris",
+        "tarif": 160000,
+        "status": "Disewa"
+    },
+    {
+        "kode": "CAM-04",
+        "nama": "Sony FX3 Cinema Line",
+        "kategori": "Kamera",
+        "tarif": 500000,
+        "status": "Tersedia"
+    },
+    {
+        "kode": "ACC-04",
+        "nama": "Wireless Mic Hollyland Lark M1",
+        "kategori": "Aksesoris",
+        "tarif": 75000,
+        "status": "Tersedia"
+    },
+    {
+        "kode": "CAM-05",
+        "nama": "Blackmagic Pocket Cinema 4K",
+        "kategori": "Kamera",
+        "tarif": 320000,
+        "status": "Tersedia"
+    },
+    {
+        "kode": "ACC-05",
+        "nama": "Tripod Video Manfrotto 504X",
+        "kategori": "Aksesoris",
+        "tarif": 90000,
+        "status": "Disewa"
+    }
+]
