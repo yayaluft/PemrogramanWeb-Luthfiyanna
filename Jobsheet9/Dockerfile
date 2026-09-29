@@ -1,15 +1,14 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# Ambil driver pdo_pgsql yang sudah jadi (tanpa kompilasi lama)
+# Instal driver PostgreSQL untuk PHP
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions pdo_pgsql pgsql
 
-# port Apache ke 8080
-RUN sed -i 's/80/8080/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf
+# Set direktori kerja
+WORKDIR /app
 
-# Copy kode proyek
-COPY . /var/www/html/
+# Copy seluruh file proyek ke /app
+COPY . .
 
-# Aktifkan rewrite & expose port
-RUN a2enmod rewrite
-EXPOSE 8080
+# Jalankan server bawaan PHP di port 8080 (tanpa butuh akses root Apache)
+CMD ["php", "-S", "0.0.0.0:8080"]
