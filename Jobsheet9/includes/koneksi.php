@@ -1,25 +1,13 @@
 <?php
-$db_url = getenv('DATABASE_URL');
 
-if ($db_url) {
-    $dbopts = parse_url($db_url);
+$host = "aws-0-ap-southeast-1.pooler.supabase.com";
+$port = "6543";
+$db   = "postgres";
+$user = "postgres.rjbcawduieilmqrwwbnb";
 
-    $host = $dbopts["host"];
-    $port = isset($dbopts["port"]) ? $dbopts["port"] : "5432";
-    $user = $dbopts["user"];
-    $pass = $dbopts["pass"];
-    $db = ltrim($dbopts["path"], '/');
+$pass = "Rentcam2026";
 
-    $dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require";
-} else {
-    $host = "localhost";
-    $port = "5433";
-    $db = "rentcam_db";
-    $user = "postgres";
-    $pass = "12345678";
-
-    $dsn = "pgsql:host=$host;port=$port;dbname=$db";
-}
+$dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require";
 
 try {
     $pdo = new PDO($dsn, $user, $pass);
