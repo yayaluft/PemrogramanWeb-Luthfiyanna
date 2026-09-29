@@ -34,11 +34,12 @@ unset($_SESSION['flash']);
     <?php endif; ?>
 
     <form id="form-tambah" action="proses_edit.php" method="POST" novalidate>
-        <input type="hidden" name="id" value="<?php echo (int)$penyewa['id']; ?>">
+        <input type="hidden" name="id" value="<?php echo (int) $penyewa['id']; ?>">
 
         <p>
             <label for="id_penyewa">ID Penyewa</label>
-            <input type="text" id="id_penyewa" name="id_penyewa" value="<?php echo htmlspecialchars($penyewa['id_penyewa']); ?>">
+            <input type="text" id="id_penyewa" name="id_penyewa"
+                value="<?php echo htmlspecialchars($penyewa['id_penyewa']); ?>">
         </p>
 
         <p>
@@ -54,14 +55,16 @@ unset($_SESSION['flash']);
         <p>
             <label for="status">Status Transaksi</label>
             <select id="status" name="status">
-                <option value="Aktif Menyewa" <?php echo $penyewa['status'] === 'Aktif Menyewa' ? 'selected' : ''; ?>>Aktif Menyewa</option>
+                <option value="Aktif Menyewa" <?php echo $penyewa['status'] === 'Aktif Menyewa' ? 'selected' : ''; ?>>
+                    Aktif Menyewa</option>
                 <option value="Selesai" <?php echo $penyewa['status'] === 'Selesai' ? 'selected' : ''; ?>>Selesai</option>
             </select>
         </p>
 
         <div class="form-actions">
             <button type="submit">Simpan Perubahan</button>
-            <a href="list.php" class="btn-reset">Batal</a>
+            <a href="list.php" class="btn-reset"
+                style="display: inline-block; padding: 0.6rem 1.6rem; background-color: #6c757d; color: #fff; border-radius: 4px; font-size: 0.95rem; font-weight: 600; text-decoration: none;">Batal</a>
         </div>
     </form>
 </section>

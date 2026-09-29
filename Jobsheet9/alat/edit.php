@@ -34,7 +34,7 @@ unset($_SESSION['flash']);
     <?php endif; ?>
 
     <form id="form-tambah" action="proses_edit.php" method="POST" novalidate>
-        <input type="hidden" name="id" value="<?php echo (int)$alat['id']; ?>">
+        <input type="hidden" name="id" value="<?php echo (int) $alat['id']; ?>">
 
         <p>
             <label for="kode">Kode Alat</label>
@@ -51,7 +51,8 @@ unset($_SESSION['flash']);
             <select id="kategori" name="kategori">
                 <option value="Kamera" <?php echo $alat['kategori'] === 'Kamera' ? 'selected' : ''; ?>>Kamera</option>
                 <option value="Lensa" <?php echo $alat['kategori'] === 'Lensa' ? 'selected' : ''; ?>>Lensa</option>
-                <option value="Aksesoris" <?php echo $alat['kategori'] === 'Aksesoris' ? 'selected' : ''; ?>>Aksesoris</option>
+                <option value="Aksesoris" <?php echo $alat['kategori'] === 'Aksesoris' ? 'selected' : ''; ?>>Aksesoris
+                </option>
             </select>
         </p>
 
@@ -70,7 +71,8 @@ unset($_SESSION['flash']);
 
         <div class="form-actions">
             <button type="submit">Simpan Perubahan</button>
-            <a href="list.php" class="btn-reset">Batal</a>
+            <a href="list.php" class="btn-reset"
+                style="display: inline-block; padding: 0.6rem 1.6rem; background-color: #6c757d; color: #fff; border-radius: 4px; font-size: 0.95rem; font-weight: 600; text-decoration: none;">Batal</a>
         </div>
     </form>
 </section>
