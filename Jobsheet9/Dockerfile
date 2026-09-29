@@ -11,4 +11,4 @@ WORKDIR /app
 COPY . .
 
 # Jalankan server bawaan PHP di port 8080 (tanpa butuh akses root Apache)
-CMD ["php", "-S", "0.0.0.0:8080"]
+CMD ["php", "-S", "0.0.0.0:80"]
