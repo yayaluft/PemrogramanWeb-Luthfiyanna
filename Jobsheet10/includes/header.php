@@ -32,15 +32,15 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
                 <?php if (isset($_SESSION['user'])): ?>
                     <li style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.5rem; margin-top: 0.5rem;">
                         <span style="color: #f3d5dc; font-size: 0.85rem; display: block; margin-bottom: 0.3rem;">
-                            Halo, <?php echo htmlspecialchars($_SESSION['user']['nama']); ?>
+                            Halo, <?php echo htmlspecialchars($_SESSION['user']['nama'] ?? $_SESSION['user']['username'] ?? 'User'); ?>
                         </span>
-                        <a href="<?php echo $base; ?>logout.php" style="display: inline-block; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.85rem; text-decoration: none;">
+                        <a href="<?php echo $base; ?>auth/logout.php" style="display: inline-block; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.85rem; text-decoration: none;">
                             Keluar
                         </a>
                     </li>
                 <?php else: ?>
                     <li style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.5rem; margin-top: 0.5rem;">
-                        <a href="<?php echo $base; ?>login.php" style="display: inline-block; background: #ffffff; color: #4a1e2f; font-weight: 600; padding: 0.45rem 1.1rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem;">
+                        <a href="<?php echo $base; ?>auth/login.php" style="display: inline-block; background: #ffffff; color: #4a1e2f; font-weight: 600; padding: 0.45rem 1.1rem; border-radius: 6px; text-decoration: none; font-size: 0.85rem;">
                             Masuk
                         </a>
                     </li>
