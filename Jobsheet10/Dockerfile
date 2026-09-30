@@ -10,7 +10,7 @@ WORKDIR /app
 # Copy seluruh file proyek ke /app
 COPY . .
 
-WORKDIR /app/Jobsheet10
+WORKDIR /app/Jobsheet10 /app
 
 # Jalankan server bawaan PHP di port 8080 (tanpa butuh akses root Apache)
 CMD ["php", "-S", "0.0.0.0:3000"]
