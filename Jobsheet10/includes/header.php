@@ -32,7 +32,7 @@ $base = $__rel === '' ? '' : str_repeat('../', substr_count($__rel, '/') + 1);
                 <?php if (isset($_SESSION['user'])): ?>
                     <li style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 0.5rem; margin-top: 0.5rem;">
                         <span style="color: #f3d5dc; font-size: 0.85rem; display: block; margin-bottom: 0.3rem;">
-                            Halo, <?php echo htmlspecialchars($_SESSION['user']['nama_lengkap']); ?>
+                            Halo, <?php echo htmlspecialchars($_SESSION['user']['nama']); ?>
                         </span>
                         <a href="<?php echo $base; ?>logout.php" style="display: inline-block; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.4rem 0.9rem; border-radius: 6px; font-size: 0.85rem; text-decoration: none;">
                             Keluar
