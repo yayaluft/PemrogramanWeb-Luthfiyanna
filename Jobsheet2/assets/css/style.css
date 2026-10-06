@@ -1,0 +1,517 @@
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #2b2b2b;
+    background-color: #f5f6f8;
+    line-height: 1.5;
+}
+
+a {
+    color: #4a1e2f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Header & Navbar ===== */
+header {
+    background-color: #4a1e2f;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+}
+
+/* Penanda halaman aktif di navbar */
+header nav a.active {
+    background-color: #6a2e45;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    font-weight: 600;
+}
+
+/* ===== Hamburger Menu ===== */
+.nav-toggle {
+    display: none !important;
+}
+
+.nav-toggle-label {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ===== Main Container ===== */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #4a1e2f;
+}
+
+/* ===== Dashboard Grid & Banner ===== */
+.hero-banner {
+    background: linear-gradient(135deg, #4a1e2f 0%, #63243d 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(74, 30, 47, 0.15);
+}
+
+.hero-banner h2 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.hero-banner p {
+    color: #f2d6df;
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.quick-links a {
+    display: inline-block;
+    background-color: #fff;
+    color: #4a1e2f;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+
+.quick-links a:hover {
+    background-color: #f7eef2;
+    text-decoration: none;
+}
+
+.quick-links a.btn-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.quick-links a.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.metric-card {
+    background-color: #fff;
+    border: 1px solid #ebdcdb;
+    border-left: 4px solid #4a1e2f;
+    border-radius: 6px;
+    padding: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.metric-card h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #73646a;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.metric-card p {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #4a1e2f;
+    line-height: 1.1;
+}
+
+.activity-card {
+    background-color: #fff;
+    border: 1px solid #ebdcdb;
+    border-radius: 6px;
+    padding: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.activity-card h3 {
+    font-size: 1.05rem;
+    color: #4a1e2f;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #f2e8ec;
+    padding-bottom: 0.4rem;
+}
+
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.88rem;
+}
+
+.activity-list li:last-child {
+    border-bottom: none;
+}
+
+.activity-list span.status-tag {
+    background-color: #fae8ed;
+    color: #4a1e2f;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+/* ===== Toolbar / Filter Atas Tabel ===== */
+.table-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.table-toolbar .filter-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.table-toolbar input[type="text"],
+.table-toolbar select {
+    padding: 0.45rem 0.75rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    font-size: 0.88rem;
+}
+
+.btn-add {
+    background-color: #4a1e2f;
+    color: #fff !important;
+    padding: 0.45rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background-color: #381522;
+    text-decoration: none;
+}
+
+/* ===== Badge Status Tabel ===== */
+.badge-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-tersedia {
+    background-color: #e6f4ea;
+    color: #137333;
+}
+
+.badge-disewa {
+    background-color: #fef7e0;
+    color: #b06000;
+}
+
+/* ===== Tabel ===== */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e6ea;
+}
+
+thead {
+    background-color: #4a1e2f;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #faf7f8;
+}
+
+tbody tr:hover {
+    background-color: #f3e9ed;
+}
+
+td button {
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.4rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+td button.btn-edit {
+    background-color: #f0ad4e;
+}
+
+td button.btn-hapus {
+    background-color: #d9534f;
+}
+
+/* ===== Form Layout & Komponen ===== */
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: #444;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="tel"],
+form select {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-row input,
+.form-row select {
+    max-width: 100% !important;
+}
+
+form textarea {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+/* Radio Button Status (Rata Kiri Sejajar) */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.4rem;
+}
+
+.radio-group label {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.radio-group input[type="radio"] {
+    width: auto !important;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Tombol Form Simpan & Batal */
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+form button {
+    padding: 0.6rem 1.6rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button[type="submit"] {
+    background-color: #4a1e2f;
+    color: #fff;
+}
+
+form button[type="submit"]:hover {
+    background-color: #331420;
+}
+
+form button.btn-reset {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+form button.btn-reset:hover {
+    background-color: #5a6268;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #7a8794;
+    font-size: 0.9rem;
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .nav-toggle-label {
+        display: block;
+    }
+
+    header nav {
+        display: none !important;
+        width: 100%;
+        background-color: #381522;
+        margin-top: 1rem;
+        border-radius: 6px;
+        padding: 0.8rem 1rem;
+    }
+
+    .nav-toggle:checked ~ nav {
+        display: block !important;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    header nav a {
+        display: block;
+        width: 100%;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .table-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .table-toolbar .filter-group {
+        flex-direction: column;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="tel"],
+    form select {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+}
